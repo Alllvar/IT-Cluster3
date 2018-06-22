@@ -1,3 +1,5 @@
+/* Не дуже хороша ідея всім тегам задавати box-sizing
+Шрифт і text-shadow краще задавати тегу body, вони наслідуються*/
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -12,11 +14,12 @@ body {
     margin: 0;
 }
 
+/* font-weight: normal - це дефолтне значення, дял чого це дублювати */
 h1 {
     font-weight: normal;
     text-align: center;
 }
-
+/* Подивися як можна оптимізувати значення margin */
 p {
     margin: 0 0 1em 0;
 }
@@ -30,6 +33,7 @@ p {
     min-height: min-content;
 }
 
+/*Краще використовувати одні і ті самі одиниці вимірювання px або em */
 header, footer, .main > article, .main > nav {
     margin: 4px;
     padding: 1em;
@@ -47,17 +51,19 @@ header, footer, .main > article, .main > nav {
 .main > nav {
     order: 1;
 }
-  
+
+/* що це за -webkit-order */
 .main > aside {
    -webkit-order: 3;
     order: 3;
 }
- 
+ /* Хіба header i footer не є блочними елементами? Значення display не потрібно*/
 header, footer {
     display: block;
     height: 80px;
 }
 
+/*Краще використовувати одні і ті самі одиниці вимірювання*/
 header > .image {
     margin: 1rem;
 }
@@ -65,7 +71,7 @@ header > .image {
 .content {
     display: flex;
 }
-
+/*   flex-grow: 1 - це дефолтне значення, також можна оптимізувати background-color */
 .column {
     flex-grow: 1;
     width: 33%;
@@ -74,7 +80,7 @@ header > .image {
     padding: 1rem;
     margin: 0.5rem;
 }
-
+/* Якщо ти використовуєш флекс бокс, можна обійтися без цього*/
 /* Too narrow to support three columns */
   @media all and (max-width: 640px) {
   
@@ -94,6 +100,7 @@ header > .image {
     background-color:rgba(0, 0, 0, 0.1); 
 }
 
+/* Чому б не задати float: left і font-size: 22px самому класу .menu */
 .menu a {
     float: left;
     display: block;
