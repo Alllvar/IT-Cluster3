@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 1px #000;
+}
+
+body {
+    color: rgb(214, 214, 214);
+    background-image: url("assets/thumb-1920-108819.jpg");
+    -webkit-background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+h1 {
+    font-weight: normal;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    height: calc(100vh - 160px);
+    min-height: min-content;
+}
+
+header, footer, .main > article, .main > nav {
+    margin: 4px;
+    padding: 1em;
+}
+ 
+.main > article {
+    flex: 4 1 0;
+    order: 2;
+}
+
+.main > nav {
+    flex: 1 6 0;
+}
+
+.main > nav {
+    order: 1;
+}
+  
+.main > aside {
+   -webkit-order: 3;
+    order: 3;
+}
+ 
+header, footer {
+    display: block;
+    height: 80px;
+}
+
+header > .image {
+    margin: 1rem;
+}
+
+.content {
+    display: flex;
+}
+
+.column {
+    flex-grow: 1;
+    width: 33%;
+    background-color: #ccc;
+    background-color:rgba(0, 0, 0, 0.1);  
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+/* Too narrow to support three columns */
+  @media all and (max-width: 640px) {
+  
+.main {
+    flex-flow: column;
+}
+
+.main > article, .main > nav {
+    order: 0;
+}
+  }
+.menu {
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    background-color: #ccc;
+    background-color:rgba(0, 0, 0, 0.1); 
+}
+
+.menu a {
+    float: left;
+    display: block;
+    color: #021f53;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: 22px; 
+}
+
+.menu a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.fig {
+    text-align: center;
+}
