@@ -1,7 +1,6 @@
-* {
+*, *:before, *:after {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    text-shadow: 1px 1px 1px #000;
 }
 
 body {
@@ -9,11 +8,11 @@ body {
     background-image: url("assets/thumb-1920-108819.jpg");
     -webkit-background-size: cover;
     background-attachment: fixed;
-    margin: 0;
+    margin: 20px;
+    text-shadow: 1px 1px 1px #000;
 }
 
-h1 {
-    font-weight: normal;
+h1, h2 {
     text-align: center;
 }
 
@@ -25,7 +24,7 @@ p {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
     height: calc(100vh - 160px);
     min-height: min-content;
 }
@@ -35,31 +34,12 @@ header, footer, .main > article, .main > nav {
     padding: 1em;
 }
  
-.main > article {
-    flex: 4 1 0;
-    order: 2;
-}
-
-.main > nav {
-    flex: 1 6 0;
-}
-
-.main > nav {
-    order: 1;
-}
-  
-.main > aside {
-   -webkit-order: 3;
-    order: 3;
-}
- 
 header, footer {
-    display: block;
     height: 80px;
 }
 
 header > .image {
-    margin: 1rem;
+    margin: 10px;
 }
 
 .content {
@@ -67,41 +47,27 @@ header > .image {
 }
 
 .column {
-    flex-grow: 1;
-    width: 33%;
+    width: auto;
     background-color: #ccc;
-    background-color:rgba(0, 0, 0, 0.1);  
-    padding: 1rem;
-    margin: 0.5rem;
+    background-color:rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
 }
-
-/* Too narrow to support three columns */
-  @media all and (max-width: 640px) {
   
-.main {
-    flex-flow: column;
-}
-
-.main > article, .main > nav {
-    order: 0;
-}
-  }
 .menu {
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    width: 200px;
     background-color: #ccc;
     background-color:rgba(0, 0, 0, 0.1); 
 }
 
 .menu a {
-    float: left;
-    display: block;
     color: #021f53;
     text-align: center;
     padding: 30px 30px;
     text-decoration: none;
-    font-size: 22px; 
+    font-size: 20px;
 }
 
 .menu a:hover {
@@ -110,4 +76,25 @@ header > .image {
 
 .fig {
     text-align: center;
+}
+
+@media all and (max-width: 1200px) {
+    .main, .content {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: row;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        padding: 5px;
+    }
 }
